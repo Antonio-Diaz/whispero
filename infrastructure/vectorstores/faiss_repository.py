@@ -1,6 +1,7 @@
 from langchain.vectorstores import FAISS
 import os
 
+
 class FAISSVectorStoreRepository:
 
     def __init__(self, allow_dangerous_deserialization: bool = False):
@@ -16,6 +17,7 @@ class FAISSVectorStoreRepository:
     def load(self, user_id, embedding):
         path = f"db/data/users/{user_id}"
         return FAISS.load_local(
-            path, embedding, 
-            allow_dangerous_deserialization=self.allow_dangerous_deserialization
+            path,
+            embedding,
+            allow_dangerous_deserialization=self.allow_dangerous_deserialization,
         )

@@ -1,5 +1,5 @@
 ENV=.env
-PYTHONPATH := $(shell pwd)
+pwd := $(shell pwd)
 STREAMLIT_APP := main.py
 
 setup:
@@ -7,10 +7,10 @@ setup:
 
 shell:
 	@echo "Activando entorno y exportando PYTHONPATH..."
-	PYTHONPATH=$(PYTHONPATH) pipenv shell
+	export PYTHONPATH=$(pwd) && pipenv shell
 
 run:
-	PYTHONPATH=$(PYTHONPATH) pipenv run streamlit run $(STREAMLIT_APP)
+	pipenv run streamlit run $(STREAMLIT_APP)
 
 lock:
 	pipenv lock

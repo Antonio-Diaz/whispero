@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-streamlit = "==1.35.0"
+streamlit = "*"
 openai = ">=1.0.0"
 langchain = "==0.2.1"
 langchain-core = "<0.3.0"
@@ -26,4 +26,4 @@ pydantic-settings = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.13"
+python_version = "3.12"
