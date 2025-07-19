@@ -9,7 +9,7 @@ from application.interfaces.annotation_repository import AnnotationRepository
 
 class AnnotationFileRepository(AnnotationRepository):
 
-    def __init__(self, base_path="app/data/users"):
+    def __init__(self, base_path="db/data/users"):
         self.base_path = Path(base_path)
 
     def _file_path(self, user_id: str):
