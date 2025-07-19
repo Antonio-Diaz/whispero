@@ -28,15 +28,7 @@ def run():
     uploaded_file, user_id = render_sidebar()
 
     if user_id and uploaded_file:
-        st.title("📄 Vista del documento")
-        render_upload_section(uploaded_file, user_id)
 
-        st.markdown("## 📌 Anotaciones")
-        render_annotation_section(user_id, uploaded_file.name)
-
-        st.markdown("## 💬 Consulta")
-        query = st.text_input("Haz una pregunta:")
-        if query:
-            render_query_section(user_id, query)
+        render_query_section(user_id)
 
     render_footer()
